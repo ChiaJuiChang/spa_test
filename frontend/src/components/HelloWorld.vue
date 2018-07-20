@@ -24,7 +24,7 @@ export default {
     getCar() {
       axios.get('/api/car')
         .then(response => {
-          const cars = response.data
+          const cars = response.data.fields
           this.cars = cars
           // this.cars = [
           //   { name: '3232' }, 
