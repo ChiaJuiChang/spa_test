@@ -54,5 +54,5 @@ def vote(request, question_id):
     #     # user hits the Back button.
     #     return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
-    res = serializers.serialize("json", Question.objects.all())
+    res = serializers.serialize("json", Question.objects.all(),fields=('question_text', 'pub_date'))
     return HttpResponse(res)
