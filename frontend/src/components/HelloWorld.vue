@@ -1,7 +1,7 @@
 <template>
   <div class="videos">
     <ul v-for="car in cars">
-      <li>{{ car.name }}</li>
+      <li>{{ car.fields.name }}</li>
     </ul>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     getCar() {
       axios.get('/api/car')
         .then(response => {
-          const cars = response.data.fields
+          const cars = response.data
           this.cars = cars
           // this.cars = [
           //   { name: '3232' }, 
